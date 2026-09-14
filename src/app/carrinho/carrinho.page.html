@@ -1,0 +1,398 @@
+<ion-content [fullscreen]="true">
+
+  <main class="carrinho-page">
+
+    <!-- HERO -->
+    <section class="carrinho-hero">
+
+      <div class="carrinho-hero-content">
+
+        <p class="eyebrow">
+          <ion-icon name="cart-outline"></ion-icon>
+          CARRINHO SOLUÇÃO AUTO
+        </p>
+
+        <h1>
+          SEU <span>CARRINHO.</span>
+        </h1>
+
+        <p>
+          Revise seus produtos e confira seu pedido antes de finalizar.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- CONTEÚDO -->
+    <section class="cart-section">
+
+      <!-- PRODUTOS -->
+      <div class="cart-products">
+
+        <div class="section-heading">
+
+          <div>
+            <p class="eyebrow">
+              SEUS PRODUTOS
+            </p>
+
+            <h2>
+              ITENS DO <span>CARRINHO</span>
+            </h2>
+          </div>
+
+          <span class="items-count">
+            3 ITENS
+          </span>
+
+        </div>
+
+
+        <!-- ITEM -->
+        <article class="cart-item">
+
+          <div class="cart-item-image">
+            <ion-icon name="image-outline"></ion-icon>
+            <span>IMAGEM</span>
+          </div>
+
+          <div class="cart-item-info">
+
+            <p>SHAMPOO AUTOMOTIVO</p>
+
+            <h3>
+              Shampoo Automotivo 500ml
+            </h3>
+
+            <span class="cart-item-price">
+              R$ 39,90
+            </span>
+
+          </div>
+
+          <div class="cart-item-quantity">
+
+            <button aria-label="Diminuir quantidade">
+              <ion-icon name="remove-outline"></ion-icon>
+            </button>
+
+            <strong>2</strong>
+
+            <button aria-label="Aumentar quantidade">
+              <ion-icon name="add-outline"></ion-icon>
+            </button>
+
+          </div>
+
+          <div class="cart-item-total">
+            <strong>R$ 79,80</strong>
+
+            <button
+              class="remove-item"
+              aria-label="Remover produto"
+            >
+              <ion-icon name="trash-outline"></ion-icon>
+            </button>
+          </div>
+
+        </article>
+
+
+        <!-- ITEM -->
+        <article class="cart-item">
+
+          <div class="cart-item-image">
+            <ion-icon name="image-outline"></ion-icon>
+            <span>IMAGEM</span>
+          </div>
+
+          <div class="cart-item-info">
+
+            <p>PROTEÇÃO</p>
+
+            <h3>
+              Pretinho para Pneus 500ml
+            </h3>
+
+            <span class="cart-item-price">
+              R$ 24,90
+            </span>
+
+          </div>
+
+          <div class="cart-item-quantity">
+
+            <button aria-label="Diminuir quantidade">
+              <ion-icon name="remove-outline"></ion-icon>
+            </button>
+
+            <strong>1</strong>
+
+            <button aria-label="Aumentar quantidade">
+              <ion-icon name="add-outline"></ion-icon>
+            </button>
+
+          </div>
+
+          <div class="cart-item-total">
+            <strong>R$ 24,90</strong>
+
+            <button
+              class="remove-item"
+              aria-label="Remover produto"
+            >
+              <ion-icon name="trash-outline"></ion-icon>
+            </button>
+          </div>
+
+        </article>
+
+
+        <!-- ITEM -->
+        <article class="cart-item">
+
+          <div class="cart-item-image">
+            <ion-icon name="image-outline"></ion-icon>
+            <span>IMAGEM</span>
+          </div>
+
+          <div class="cart-item-info">
+
+            <p>CERAS E PROTEÇÃO</p>
+
+            <h3>
+              Cera Automotiva
+            </h3>
+
+            <span class="cart-item-price">
+              R$ 59,90
+            </span>
+
+          </div>
+
+          <div class="cart-item-quantity">
+
+            <button aria-label="Diminuir quantidade">
+              <ion-icon name="remove-outline"></ion-icon>
+            </button>
+
+            <strong>1</strong>
+
+            <button aria-label="Aumentar quantidade">
+              <ion-icon name="add-outline"></ion-icon>
+            </button>
+
+          </div>
+
+          <div class="cart-item-total">
+            <strong>R$ 59,90</strong>
+
+            <button
+              class="remove-item"
+              aria-label="Remover produto"
+            >
+              <ion-icon name="trash-outline"></ion-icon>
+            </button>
+          </div>
+
+        </article>
+
+      </div>
+
+
+      <!-- RESUMO -->
+      <aside class="cart-summary">
+
+        <div class="summary-header">
+
+          <p class="eyebrow">
+            SEU PEDIDO
+          </p>
+
+          <h2>
+            RESUMO
+          </h2>
+
+        </div>
+
+
+        <div class="summary-details">
+
+          <div>
+            <span>Produtos</span>
+            <strong>3 itens</strong>
+          </div>
+
+          <div>
+            <span>Subtotal</span>
+            <strong>R$ 164,60</strong>
+          </div>
+
+        </div>
+
+
+        <div class="summary-total">
+
+          <span>TOTAL</span>
+
+          <strong>
+            R$ 164,60
+          </strong>
+
+        </div>
+
+
+        <ion-button
+          class="whatsapp-checkout"
+          expand="block"
+        >
+          <ion-icon
+            slot="start"
+            name="logo-whatsapp"
+          ></ion-icon>
+
+          FINALIZAR NO WHATSAPP
+        </ion-button>
+
+
+        <p class="summary-note">
+          Ao continuar, você será direcionado para o WhatsApp
+          para confirmar seu pedido com nossa equipe.
+        </p>
+
+      </aside>
+
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+
+    <!-- MARCA -->
+    <div class="footer-brand">
+
+      <img src="assets/img/SolucaoAuto semBG navbar.png" alt="Solução Auto">
+
+      <p>
+        Produtos profissionais para estética automotiva,
+        cuidado e conservação do seu veículo.
+      </p>
+
+    </div>
+
+
+    <!-- NAVEGAÇÃO -->
+    <nav class="footer-column" aria-label="Navegação do rodapé">
+
+      <strong>NAVEGAÇÃO</strong>
+
+      <a routerLink="/home">
+        Início
+      </a>
+
+      <a routerLink="/catalogo">
+        Catálogo
+      </a>
+
+      <a routerLink="/atendimento">
+        Atendimento
+      </a>
+
+      <a routerLink="/perfil">
+        Meu perfil
+      </a>
+
+    </nav>
+
+
+    <!-- PRODUTOS -->
+    <div class="footer-column">
+
+      <strong>PRODUTOS</strong>
+
+      <a routerLink="/catalogo">
+        Ceras e proteção
+      </a>
+
+      <a routerLink="/catalogo">
+        Lavagem
+      </a>
+
+      <a routerLink="/catalogo">
+        Acessórios
+      </a>
+
+      <a routerLink="/catalogo">
+        Ver catálogo
+      </a>
+
+    </div>
+
+
+    <!-- CONTATO -->
+    <address class="footer-column">
+
+      <strong>CONTATO</strong>
+
+      <a href="tel:+5500000000000">
+        (00) 00000-0000
+      </a>
+
+      <a href="mailto:contato@solucaoauto.com">
+        contato@solucaoauto.com
+      </a>
+
+      <a href="#">
+        &#64;solucaoauto
+      </a>
+
+      <a href="#">
+        Adicione seu endereço
+      </a>
+
+    </address>
+
+
+    <!-- REDES SOCIAIS -->
+    <div class="footer-social">
+
+      <strong>ACOMPANHE</strong>
+
+      <p>
+        Siga a Solução Auto
+        nas redes sociais.
+      </p>
+
+      <div class="social-links">
+
+        <a href="#" aria-label="WhatsApp">
+          <ion-icon name="logo-whatsapp"></ion-icon>
+        </a>
+
+        <a href="#" aria-label="Instagram">
+          <ion-icon name="logo-instagram"></ion-icon>
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <!-- COPYRIGHT -->
+    <div class="footer-bottom">
+
+      <span>
+        © 2026 Solução Auto. Todos os direitos reservados.
+      </span>
+
+      <span>
+        Estética automotiva
+      </span>
+
+    </div>
+
+  </footer>
+
+</ion-content>

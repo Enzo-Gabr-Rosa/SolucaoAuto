@@ -1,45 +1,112 @@
+/* =========================================================
+   NAVBAR DESKTOP
+========================================================= */
+
 .navbar {
-  position: relative; // 👈 adicionar isso;
+  position: relative;
+
   --background: var(--carbon);
   --border: 4px solid var(--onyx);
+
   display: flex;
+
   align-items: center;
   justify-content: space-between;
+
   height: 65px;
+
   padding: 0 16px;
+
+  z-index: 1000;
 }
+
+
+/* =========================================================
+   FUNDO VETORIAL
+========================================================= */
 
 .background-svg {
   fill: var(--onyx);
+
   position: absolute;
+
   top: 0;
-  bottom: 0;
   right: 0;
+  bottom: 0;
+
   width: 90%;
   height: 100%;
+
   z-index: 0;
+
+  pointer-events: none;
 }
 
+
+/* =========================================================
+   LOGO
+========================================================= */
 
 .logo-container {
   position: relative;
-  z-index: 2;
-  display: flex;
-  align-items: center;
-  flex-shrink: 0;
-  height: 100%;
-  padding-right: 24px;
 
-  img {
-    width: auto;
-  }
+  z-index: 2;
+
+  display: flex;
+
+  align-items: center;
+
+  flex-shrink: 0;
+
+  height: 100%;
+
+  padding-right: 24px;
 }
 
+.logo-container img {
+  width: auto;
+  height: auto;
+
+  display: block;
+}
+
+
+/* =========================================================
+   ITENS DA NAVBAR
+========================================================= */
+
 ion-tab-button.nav-item {
+  position: relative;
+
+  z-index: 2;
+
+  /*
+    IMPORTANTE:
+    Remove o fundo padrão do Ionic dos botões.
+  */
+  --background: transparent;
+  --background-focused: transparent;
+  --background-hover: transparent;
+  --background-activated: transparent;
+
+  --color: rgba(255, 255, 255, .75);
   --color-selected: var(--azul);
+
+  --ripple-color: transparent;
+
   display: flex;
+
   justify-content: center;
   align-items: center;
+
+  min-width: 100px;
+
+  /*
+    Garante que o botão não crie
+    uma área visual própria.
+  */
+  margin: 0;
+  border: 0;
 
   ion-icon {
     width: 21px;
@@ -49,4 +116,144 @@ ion-tab-button.nav-item {
   ion-label {
     font-size: 16px;
   }
+}
+
+
+/* =========================================================
+   NAVBAR OCULTA
+========================================================= */
+
+.navbar-hidden {
+  display: none !important;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 800px) {
+
+  .navbar {
+    position: fixed;
+
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: auto;
+
+    width: 100%;
+    height: 68px;
+
+    padding: 0;
+
+    display: flex;
+
+    justify-content: space-around;
+    align-items: stretch;
+
+    --background: #060606;
+    --border: 0;
+
+    border-top: 2px solid var(--azul);
+
+    z-index: 10000;
+  }
+
+
+  /* =======================================================
+     REMOVE O VETOR
+  ======================================================= */
+
+  .background-svg {
+    display: none;
+  }
+
+
+  /* =======================================================
+     REMOVE A LOGO
+  ======================================================= */
+
+  .logo-container {
+    display: none;
+  }
+
+
+  /* =======================================================
+     ITENS MOBILE
+  ======================================================= */
+
+  ion-tab-button.nav-item {
+    position: relative;
+
+    z-index: 2;
+
+    --background: #060606;
+    --background-focused: #060606;
+    --background-hover: #060606;
+    --background-activated: #060606;
+
+    --color: rgba(255, 255, 255, .62);
+    --color-selected: var(--azul-claro);
+
+    --ripple-color: transparent;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    flex: 1;
+
+    min-width: 0;
+
+    height: 68px;
+
+    margin: 0;
+    padding: 6px 2px;
+
+    border: 0;
+
+    ion-icon {
+      width: 21px;
+      height: 21px;
+
+      margin-bottom: 3px;
+    }
+
+    ion-label {
+      font-size: 11px;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+  }
+
+}
+
+
+/* =========================================================
+   CELULARES PEQUENOS
+========================================================= */
+
+@media (max-width: 480px) {
+
+  .navbar {
+    height: 64px;
+  }
+
+  ion-tab-button.nav-item {
+    height: 64px;
+
+    padding: 5px 1px;
+
+    ion-icon {
+      width: 20px;
+      height: 20px;
+    }
+
+    ion-label {
+      font-size: 10px;
+    }
+  }
+
 }

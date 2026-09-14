@@ -1,0 +1,504 @@
+<ion-content [fullscreen]="true">
+
+  <main class="auth-page">
+
+
+    <!-- =====================================================
+         LADO DA MARCA
+    ====================================================== -->
+
+    <section class="auth-brand">
+
+      <div class="brand-background"></div>
+
+      <div class="brand-content">
+
+        <img
+          src="assets/img/SolucaoAuto semBG.png"
+          alt="Solução Auto"
+          class="brand-logo"
+        >
+
+        <p class="eyebrow">
+          SOLUÇÃO AUTO
+        </p>
+
+        <h1>
+          CUIDE DO SEU CARRO.
+          <span>DO SEU JEITO.</span>
+        </h1>
+
+        <p class="brand-description">
+          Acesse sua conta para acompanhar seus produtos favoritos
+          e deixar suas compras ainda mais práticas.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         ÁREA DE AUTENTICAÇÃO
+    ====================================================== -->
+
+    <section class="auth-form-section">
+
+      <div class="auth-container">
+
+
+        <!-- =================================================
+             LOGIN
+        ================================================== -->
+
+        @if (modo === 'login') {
+
+          <div class="auth-header">
+
+            <p class="eyebrow">
+              BEM-VINDO À SOLUÇÃO AUTO
+            </p>
+
+            <h2>
+              ENTRAR NA <span>CONTA.</span>
+            </h2>
+
+            <p>
+              Acesse sua conta para continuar.
+            </p>
+
+          </div>
+
+
+          <form
+            class="auth-form"
+            (ngSubmit)="entrar()"
+          >
+
+
+            <!-- E-MAIL -->
+
+            <div class="form-field">
+
+              <label for="login-email">
+                E-MAIL
+              </label>
+
+              <div class="input-wrapper">
+
+                <ion-icon name="mail-outline"></ion-icon>
+
+                <input
+                  id="login-email"
+                  name="loginEmail"
+                  type="email"
+                  placeholder="seu@email.com"
+                  autocomplete="email"
+                  [(ngModel)]="loginEmail"
+                  required
+                >
+
+              </div>
+
+            </div>
+
+
+            <!-- SENHA -->
+
+            <div class="form-field">
+
+              <div class="field-label">
+
+                <label for="login-password">
+                  SENHA
+                </label>
+
+                <button
+                  type="button"
+                  class="forgot-password"
+                >
+                  ESQUECI MINHA SENHA
+                </button>
+
+              </div>
+
+
+              <div class="input-wrapper">
+
+                <ion-icon name="lock-closed-outline"></ion-icon>
+
+                <input
+                  id="login-password"
+                  name="loginSenha"
+                  [type]="mostrarSenhaLogin ? 'text' : 'password'"
+                  placeholder="Digite sua senha"
+                  autocomplete="current-password"
+                  [(ngModel)]="loginSenha"
+                  required
+                >
+
+                <button
+                  type="button"
+                  class="password-toggle"
+                  aria-label="Mostrar ou ocultar senha"
+                  (click)="alternarSenhaLogin()"
+                >
+
+                  <ion-icon
+                    [name]="mostrarSenhaLogin ? 'eye-off-outline' : 'eye-outline'"
+                  ></ion-icon>
+
+                </button>
+
+              </div>
+
+            </div>
+
+
+            <!-- LEMBRAR -->
+
+            <label class="remember-me">
+
+              <input
+                type="checkbox"
+                name="lembrar"
+              >
+
+              <span>
+                Lembrar de mim
+              </span>
+
+            </label>
+
+
+            <!-- ENTRAR -->
+
+            <ion-button
+              type="submit"
+              expand="block"
+              class="auth-button"
+            >
+
+              ENTRAR
+
+              <ion-icon
+                slot="end"
+                name="arrow-forward-outline"
+              ></ion-icon>
+
+            </ion-button>
+
+
+            <!-- GOOGLE -->
+
+            <ion-button
+              type="button"
+              expand="block"
+              fill="outline"
+              class="google-button"
+              (click)="entrarComGoogle()"
+            >
+
+              <ion-icon
+                slot="start"
+                name="logo-google"
+              ></ion-icon>
+
+              ENTRAR COM GOOGLE
+
+            </ion-button>
+
+          </form>
+
+
+          <!-- DIVISOR -->
+
+          <div class="auth-divider">
+            <span>OU</span>
+          </div>
+
+
+          <!-- CADASTRO -->
+
+          <div class="register-area">
+
+            <p>
+              Ainda não possui uma conta?
+            </p>
+
+            <button
+              type="button"
+              class="register-button"
+              (click)="mudarModo('cadastro')"
+            >
+
+              CRIAR CONTA
+
+              <ion-icon
+                name="arrow-forward-outline"
+              ></ion-icon>
+
+            </button>
+
+          </div>
+
+        }
+
+
+        <!-- =================================================
+             CADASTRO
+        ================================================== -->
+
+        @if (modo === 'cadastro') {
+
+          <div class="auth-header">
+
+            <p class="eyebrow">
+              CRIE SUA CONTA
+            </p>
+
+            <h2>
+              CRIAR <span>CONTA.</span>
+            </h2>
+
+            <p>
+              Cadastre-se para aproveitar todos os recursos
+              da Solução Auto.
+            </p>
+
+          </div>
+
+
+          <form
+            class="auth-form"
+            (ngSubmit)="cadastrar()"
+          >
+
+
+            <!-- NOME -->
+
+            <div class="form-field">
+
+              <label for="nome">
+                NOME
+              </label>
+
+              <div class="input-wrapper">
+
+                <ion-icon name="person-outline"></ion-icon>
+
+                <input
+                  id="nome"
+                  name="nome"
+                  type="text"
+                  placeholder="Seu nome"
+                  autocomplete="name"
+                  [(ngModel)]="nome"
+                  required
+                >
+
+              </div>
+
+            </div>
+
+
+            <!-- E-MAIL -->
+
+            <div class="form-field">
+
+              <label for="cadastro-email">
+                E-MAIL
+              </label>
+
+              <div class="input-wrapper">
+
+                <ion-icon name="mail-outline"></ion-icon>
+
+                <input
+                  id="cadastro-email"
+                  name="cadastroEmail"
+                  type="email"
+                  placeholder="seu@email.com"
+                  autocomplete="email"
+                  [(ngModel)]="cadastroEmail"
+                  required
+                >
+
+              </div>
+
+            </div>
+
+
+            <!-- SENHA -->
+
+            <div class="form-field">
+
+              <label for="cadastro-password">
+                SENHA
+              </label>
+
+              <div class="input-wrapper">
+
+                <ion-icon name="lock-closed-outline"></ion-icon>
+
+                <input
+                  id="cadastro-password"
+                  name="cadastroSenha"
+                  [type]="mostrarSenhaCadastro ? 'text' : 'password'"
+                  placeholder="Crie uma senha"
+                  autocomplete="new-password"
+                  [(ngModel)]="cadastroSenha"
+                  required
+                >
+
+                <button
+                  type="button"
+                  class="password-toggle"
+                  aria-label="Mostrar ou ocultar senha"
+                  (click)="alternarSenhaCadastro()"
+                >
+
+                  <ion-icon
+                    [name]="mostrarSenhaCadastro ? 'eye-off-outline' : 'eye-outline'"
+                  ></ion-icon>
+
+                </button>
+
+              </div>
+
+            </div>
+
+
+            <!-- CONFIRMAR SENHA -->
+
+            <div class="form-field">
+
+              <label for="confirmar-password">
+                CONFIRMAR SENHA
+              </label>
+
+              <div class="input-wrapper">
+
+                <ion-icon name="lock-closed-outline"></ion-icon>
+
+                <input
+                  id="confirmar-password"
+                  name="confirmarSenha"
+                  [type]="mostrarConfirmarSenha ? 'text' : 'password'"
+                  placeholder="Digite a senha novamente"
+                  autocomplete="new-password"
+                  [(ngModel)]="confirmarSenha"
+                  required
+                >
+
+                <button
+                  type="button"
+                  class="password-toggle"
+                  aria-label="Mostrar ou ocultar confirmação da senha"
+                  (click)="alternarConfirmarSenha()"
+                >
+
+                  <ion-icon
+                    [name]="mostrarConfirmarSenha ? 'eye-off-outline' : 'eye-outline'"
+                  ></ion-icon>
+
+                </button>
+
+              </div>
+
+            </div>
+
+
+            <!-- TERMOS -->
+
+            <label class="remember-me terms">
+
+              <input
+                type="checkbox"
+                name="aceitarTermos"
+                [(ngModel)]="aceitarTermos"
+              >
+
+              <span>
+                Aceito os termos de uso
+              </span>
+
+            </label>
+
+
+            <!-- CADASTRAR -->
+
+            <ion-button
+              type="submit"
+              expand="block"
+              class="auth-button"
+            >
+
+              CRIAR CONTA
+
+              <ion-icon
+                slot="end"
+                name="arrow-forward-outline"
+              ></ion-icon>
+
+            </ion-button>
+
+            <ion-button
+              type="button"
+              expand="block"
+              fill="outline"
+              class="google-button"
+              (click)="entrarComGoogle()"
+            >
+
+              <ion-icon
+                slot="start"
+                name="logo-google"
+              ></ion-icon>
+
+              ENTRAR COM GOOGLE
+
+            </ion-button>
+
+          </form>
+
+
+          <!-- VOLTAR PARA LOGIN -->
+
+          <div class="auth-divider">
+            <span>OU</span>
+          </div>
+
+
+          <div class="register-area">
+
+            <p>
+              Já possui uma conta?
+            </p>
+
+            <button
+              type="button"
+              class="register-button"
+              (click)="mudarModo('login')"
+            >
+
+              ENTRAR
+
+              <ion-icon
+                name="arrow-forward-outline"
+              ></ion-icon>
+
+            </button>
+
+          </div>
+
+        }
+
+
+      </div>
+
+    </section>
+
+  </main>
+
+</ion-content>

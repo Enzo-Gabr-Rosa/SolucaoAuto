@@ -2,14 +2,11 @@
   <main class="catalog-page">
 
     <!-- HERO -->
-    <section
-      class="catalog-hero"
-      aria-labelledby="catalog-title"
-    >
+    <section class="catalog-hero" aria-labelledby="catalog-title">
       <div>
         <p class="eyebrow">
           <ion-icon name="flag"></ion-icon>
-          SOLUÇÃO AUTO
+          CATÁLOGO SOLUÇÃO AUTO
         </p>
 
         <h1 id="catalog-title">
@@ -24,27 +21,17 @@
 
 
     <!-- CONTEÚDO DO CATÁLOGO -->
-    <section
-      class="catalog-content"
-      aria-label="Lista de produtos"
-    >
+    <section class="catalog-content" aria-label="Lista de produtos">
 
       <!-- FILTROS -->
-      <aside
-        class="catalog-filter"
-        aria-label="Pesquisa e filtros"
-      >
+      <aside class="catalog-filter" aria-label="Pesquisa e filtros">
 
         <div class="filter-heading">
           <ion-icon name="filter-outline"></ion-icon>
           <strong>ENCONTRE SEU PRODUTO</strong>
         </div>
 
-        <ion-searchbar
-          placeholder="Buscar produto"
-          searchIcon="search-outline"
-          inputmode="search"
-        ></ion-searchbar>
+        <ion-searchbar placeholder="Buscar produto" searchIcon="search-outline" inputmode="search"></ion-searchbar>
 
         <div class="filter-fields">
 
@@ -146,54 +133,50 @@
 
           @for (product of products; track product.name) {
 
-            <article class="catalog-card">
+          <article class="catalog-card">
 
-              <!-- IMAGEM -->
-              <div class="catalog-image-placeholder">
-                <ion-icon name="image-outline"></ion-icon>
+            <!-- IMAGEM -->
+            <div class="catalog-image-placeholder">
+              <ion-icon name="image-outline"></ion-icon>
 
-                <span>
-                  IMAGEM DO PRODUTO
-                </span>
-              </div>
-
-
-              <!-- INFORMAÇÕES -->
-              <div class="catalog-card-copy">
-
-                <p>
-                  {{ product.category }}
-                </p>
-
-                <h3>
-                  {{ product.name }}
-                </h3>
-
-                <span class="product-description">
-                  Descrição do produto e seus principais benefícios.
-                </span>
+              <span>
+                IMAGEM DO PRODUTO
+              </span>
+            </div>
 
 
-                <!-- AÇÃO -->
-                <div class="catalog-card-action">
+            <!-- INFORMAÇÕES -->
+            <div class="catalog-card-copy">
 
-                  <strong>
-                    {{ product.price }}
-                  </strong>
+              <p>
+                {{ product.category }}
+              </p>
 
-                  <ion-button
-                    class="catalog-add-button"
-                    fill="solid"
-                    [attr.aria-label]="'Adicionar ' + product.name"
-                  >
-                    <ion-icon name="add-outline"></ion-icon>
-                  </ion-button>
+              <h3>
+                {{ product.name }}
+              </h3>
 
-                </div>
+              <span class="product-description">
+                Descrição do produto e seus principais benefícios.
+              </span>
+
+
+              <!-- AÇÃO -->
+              <div class="catalog-card-action">
+
+                <strong>
+                  {{ product.price }}
+                </strong>
+
+                <ion-button class="catalog-add-button" fill="solid" [attr.aria-label]="'Adicionar ' + product.name">
+                  <ion-icon name="add-outline"></ion-icon>
+                </ion-button>
 
               </div>
 
-            </article>
+            </div>
+
+          </article>
 
           }
 
@@ -205,17 +188,130 @@
 
   </main>
 
-    <footer class="site-footer">
-      <div class="footer-brand"><img src="assets/img/SolucaoAuto semBG navbar.png" alt="Solução Auto">
-        <p>Produtos profissionais para estética automotiva.</p>
+  <footer class="site-footer">
+
+    <!-- MARCA -->
+    <div class="footer-brand">
+
+      <img src="assets/img/SolucaoAuto semBG navbar.png" alt="Solução Auto">
+
+      <p>
+        Produtos profissionais para estética automotiva,
+        cuidado e conservação do seu veículo.
+      </p>
+
+    </div>
+
+
+    <!-- NAVEGAÇÃO -->
+    <nav class="footer-column" aria-label="Navegação do rodapé">
+
+      <strong>NAVEGAÇÃO</strong>
+
+      <a routerLink="/home">
+        Início
+      </a>
+
+      <a routerLink="/catalogo">
+        Catálogo
+      </a>
+
+      <a routerLink="/atendimento">
+        Atendimento
+      </a>
+
+      <a routerLink="/perfil">
+        Meu perfil
+      </a>
+
+    </nav>
+
+
+    <!-- PRODUTOS -->
+    <div class="footer-column">
+
+      <strong>PRODUTOS</strong>
+
+      <a routerLink="/catalogo">
+        Ceras e proteção
+      </a>
+
+      <a routerLink="/catalogo">
+        Lavagem
+      </a>
+
+      <a routerLink="/catalogo">
+        Acessórios
+      </a>
+
+      <a routerLink="/catalogo">
+        Ver catálogo
+      </a>
+
+    </div>
+
+
+    <!-- CONTATO -->
+    <address class="footer-column">
+
+      <strong>CONTATO</strong>
+
+      <a href="tel:+5500000000000">
+        (00) 00000-0000
+      </a>
+
+      <a href="mailto:contato@solucaoauto.com">
+        contato@solucaoauto.com
+      </a>
+
+      <a href="#">
+        &#64;solucaoauto
+      </a>
+
+      <a href="#">
+        Adicione seu endereço
+      </a>
+
+    </address>
+
+
+    <!-- REDES SOCIAIS -->
+    <div class="footer-social">
+
+      <strong>ACOMPANHE</strong>
+
+      <p>
+        Siga a Solução Auto
+        nas redes sociais.
+      </p>
+
+      <div class="social-links">
+
+        <a href="#" aria-label="WhatsApp">
+          <ion-icon name="logo-whatsapp"></ion-icon>
+        </a>
+
+        <a href="#" aria-label="Instagram">
+          <ion-icon name="logo-instagram"></ion-icon>
+        </a>
+
       </div>
-      <nav class="footer-column" aria-label="Navegação do rodapé"><strong>NAVEGAÇÃO</strong><a
-          routerLink="/home">Início</a><a routerLink="/catalogo">Catálogo</a><a routerLink="/perfil">Meu perfil</a>
-      </nav>
-      <address class="footer-column"><strong>CONTATO</strong><a href="tel:+5500000000000">(00) 00000-0000</a><a
-          href="mailto:contato@solucaoauto.com">contato@solucaoauto.com</a><a href="#">&#64;solucaoauto</a></address>
-      <div class="social-links" aria-label="Redes sociais"><a href="#" aria-label="WhatsApp"><ion-icon
-            name="logo-whatsapp"></ion-icon></a><a href="#" aria-label="Instagram"><ion-icon
-            name="logo-instagram"></ion-icon></a></div>
-    </footer>
+
+    </div>
+
+
+    <!-- COPYRIGHT -->
+    <div class="footer-bottom">
+
+      <span>
+        © 2026 Solução Auto. Todos os direitos reservados.
+      </span>
+
+      <span>
+        Estética automotiva
+      </span>
+
+    </div>
+
+  </footer>
 </ion-content>

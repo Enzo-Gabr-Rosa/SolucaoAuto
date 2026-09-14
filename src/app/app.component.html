@@ -1,18 +1,38 @@
 <ion-app>
 
   <ion-router-outlet></ion-router-outlet>
-  
+
   <ion-tabs>
 
-    <ion-tab-bar slot="top" class="navbar" selectedTab="home">
+    <ion-tab-bar
+      slot="top"
+      class="navbar"
+      [class.navbar-hidden]="!mostrarNavbar"
+      selectedTab="home"
+    >
 
-      <svg class="background-svg" preserveAspectRatio="none" viewBox="0 0 1332 66" fill="none"
-        xmlns="http://www.w3.org/2000/svg">
-        <path d="M0.683228 0L76.1509 65H1331.68V0H0.683228Z" fill="#060606" stroke="#060606" stroke-width="0.507322" />
+      <!-- Fundo vetorial: somente desktop -->
+      <svg
+        class="background-svg"
+        preserveAspectRatio="none"
+        viewBox="0 0 1332 66"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M0.683228 0L76.1509 65H1331.68V0H0.683228Z"
+          fill="#060606"
+          stroke="#060606"
+          stroke-width="0.507322"
+        />
       </svg>
 
+      <!-- Logo: somente desktop -->
       <div class="logo-container">
-        <img src="../assets/img/SolucaoAuto semBG navbar.png" alt="Solução Auto">
+        <img
+          src="../assets/img/SolucaoAuto semBG navbar.png"
+          alt="Solução Auto"
+        >
       </div>
 
       <ion-tab-button tab="home" class="nav-item">
@@ -43,6 +63,5 @@
     </ion-tab-bar>
 
   </ion-tabs>
-
 
 </ion-app>

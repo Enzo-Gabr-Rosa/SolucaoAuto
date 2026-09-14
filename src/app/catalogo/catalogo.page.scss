@@ -1,7 +1,42 @@
+:host {
+  display: block;
+  color: var(--branco);
+}
+
+main {
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
 .catalog-hero {
-  min-height: 280px;
+  position: relative;
+  isolation: isolate;
+
+  min-height: 430px;
+
   display: grid;
   align-items: center;
+
+  overflow: hidden;
+
+  background: #060606;
+
+  border-bottom: 5px solid var(--azul);
+}
+
+/* Fundo */
+.catalog-hero::before {
+  content: '';
+
+  position: absolute;
+  inset: -25px;
+
+  z-index: -2;
+
   background:
     linear-gradient(
       100deg,
@@ -9,18 +44,45 @@
       rgba(6, 6, 6, .56)
     ),
     url('/assets/img/Background%20Hero.jpg') center / cover;
-  border-bottom: 5px solid var(--azul);
+
+  filter: blur(7px);
+
+  transform: scale(1.04);
+}
+
+/* Camada de escurecimento */
+.catalog-hero::after {
+  content: '';
+
+  position: absolute;
+  inset: 0;
+
+  z-index: -1;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(6, 6, 6, .25),
+      transparent 70%
+    );
 }
 
 .catalog-hero > div {
+  position: relative;
+  z-index: 1;
+
   width: min(1180px, calc(100% - 64px));
+
   margin-inline: auto;
 }
 
 .catalog-hero h1 {
   margin: 0 0 10px;
+
   font-size: clamp(43px, 5vw, 66px);
+
   line-height: 1;
+
   font-weight: 800;
 }
 
@@ -31,34 +93,53 @@ h2 span {
 
 .catalog-hero p:not(.eyebrow) {
   max-width: 440px;
+
   margin: 0;
+
   color: rgba(255, 255, 255, .72);
+
   font-size: 17px;
+
   line-height: 1.5;
 }
 
 
+/* =========================================================
+   CONTEÚDO DO CATÁLOGO
+========================================================= */
+
 .catalog-content {
   width: min(1400px, calc(100% - 64px));
+
   margin-inline: auto;
 
   display: grid;
+
   grid-template-columns: 235px 1fr;
+
   gap: 42px;
 
   padding: 67px 0 90px;
 }
 
 
+/* =========================================================
+   FILTROS
+========================================================= */
+
 .catalog-filter {
   align-self: start;
+
   border: 1px solid rgba(255, 255, 255, .14);
+
   background: #111316;
 }
 
 .filter-heading {
   display: flex;
+
   gap: 9px;
+
   align-items: center;
 
   padding: 18px 20px;
@@ -66,15 +147,17 @@ h2 span {
   border-bottom: 1px solid rgba(255, 255, 255, .14);
 
   color: #fff;
+
   font-size: 13px;
+
   letter-spacing: .7px;
 }
 
 .filter-heading ion-icon {
   color: var(--azul-claro);
+
   font-size: 19px;
 }
-
 
 .catalog-filter ion-searchbar {
   --background: #080a0c;
@@ -86,7 +169,6 @@ h2 span {
   padding: 14px;
 }
 
-
 .filter-fields {
   padding: 4px 14px 20px;
 }
@@ -95,8 +177,11 @@ h2 span {
   margin: 12px 6px 8px;
 
   color: var(--azul-claro);
+
   font-size: 12px;
+
   font-weight: 800;
+
   letter-spacing: .8px;
 }
 
@@ -111,14 +196,19 @@ h2 span {
 
 .filter-fields ion-label {
   color: rgba(255, 255, 255, .62);
+
   font-size: 11px;
+
   font-weight: 700;
+
   letter-spacing: .5px;
 }
 
 .filter-fields ion-select {
   width: 100%;
+
   color: #fff;
+
   font-size: 13px;
 }
 
@@ -130,13 +220,20 @@ h2 span {
   margin: 20px 6px 0;
 
   color: rgba(255, 255, 255, .8);
+
   font-size: 13px;
 }
 
 
+/* =========================================================
+   CABEÇALHO DA LISTA
+========================================================= */
+
 .catalog-list-heading {
   display: flex;
+
   justify-content: space-between;
+
   align-items: end;
 
   margin-bottom: 26px;
@@ -146,69 +243,116 @@ h2 span {
   margin: 0;
 
   font-size: 38px;
+
   line-height: 1;
+
   font-weight: 800;
 }
 
 .catalog-list-heading > ion-icon {
   color: var(--azul-claro);
+
   font-size: 28px;
 }
 
 
+/* =========================================================
+   GRID DE PRODUTOS
+========================================================= */
+
 .catalog-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(205px, 1fr));
+
+  grid-template-columns:
+    repeat(auto-fit, minmax(205px, 1fr));
+
   gap: 15px;
 }
 
 
+/* =========================================================
+   CARD DE PRODUTO
+========================================================= */
+
 .catalog-card {
   display: flex;
+
   flex-direction: column;
 
   min-height: 324px;
+
   padding: 7px;
 
   background: #070808;
 
   border: 0;
+
   border-right: 8px solid var(--azul);
+
   border-bottom: 8px solid var(--azul);
+
   border-bottom-right-radius: 12px;
+
+  transition:
+    transform .2s ease,
+    background .2s ease;
 }
 
+.catalog-card:hover {
+  transform: translateY(-3px);
+
+  background: #0a0c0d;
+}
+
+
+/* =========================================================
+   IMAGEM DO PRODUTO
+========================================================= */
 
 .catalog-image-placeholder {
   height: 154px;
 
   display: grid;
+
   place-content: center;
+
   gap: 7px;
 
   background: #121417;
+
   border: 1px solid #3c434c;
 
   color: rgba(255, 255, 255, .68);
+
   text-align: center;
 }
 
 .catalog-image-placeholder ion-icon {
   margin: auto;
+
   color: #fff;
+
   font-size: 35px;
 }
 
 .catalog-image-placeholder span {
   font-size: 9px;
+
   font-weight: 700;
+
   letter-spacing: .7px;
 }
 
 
+/* =========================================================
+   INFORMAÇÕES DO PRODUTO
+========================================================= */
+
 .catalog-card-copy {
   display: flex;
+
   flex: 1;
+
   flex-direction: column;
 
   padding: 13px 9px 5px;
@@ -218,6 +362,7 @@ h2 span {
   margin: 0 0 4px;
 
   color: var(--azul-claro);
+
   font-size: 11px;
 }
 
@@ -225,21 +370,32 @@ h2 span {
   margin: 0 0 6px;
 
   color: #fff;
+
   font-size: 17px;
+
   line-height: 1;
+
   font-weight: 800;
 }
 
 .product-description {
   color: rgba(255, 255, 255, .56);
+
   font-size: 11px;
+
   line-height: 1.25;
 }
 
 
+/* =========================================================
+   AÇÃO DO PRODUTO
+========================================================= */
+
 .catalog-card-action {
   display: flex;
+
   align-items: center;
+
   justify-content: space-between;
 
   margin-top: auto;
@@ -247,6 +403,7 @@ h2 span {
 
 .catalog-card-action strong {
   color: var(--azul-claro);
+
   font-size: 16px;
 }
 
@@ -256,6 +413,7 @@ h2 span {
   --border-radius: 0;
 
   width: 46px;
+
   min-height: 42px;
 
   margin: 0;
@@ -266,7 +424,271 @@ h2 span {
 }
 
 
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.site-footer {
+  display: grid;
+
+  grid-template-columns:
+    1.5fr
+    1fr
+    1fr
+    1.3fr
+    1fr;
+
+  column-gap: 42px;
+
+  row-gap: 36px;
+
+  width: 100%;
+
+  padding:
+    54px
+    max(32px, calc((100% - 1180px) / 2))
+    28px;
+
+  background: #070809;
+
+  color: rgba(255, 255, 255, .65);
+
+  font-size: 13px;
+}
+
+
+/* =========================================================
+   MARCA
+========================================================= */
+
+.footer-brand {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: flex-start;
+}
+
+.site-footer img {
+  width: 150px;
+
+  height: auto;
+
+  display: block;
+
+  margin-bottom: 14px;
+}
+
+.footer-brand p {
+  max-width: 230px;
+
+  margin: 0;
+
+  color: rgba(255, 255, 255, .5);
+
+  line-height: 1.5;
+}
+
+
+/* =========================================================
+   COLUNAS
+========================================================= */
+
+.footer-column {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: flex-start;
+
+  gap: 10px;
+
+  margin: 0;
+
+  padding: 0;
+
+  font-style: normal;
+}
+
+.footer-column strong,
+.footer-social strong {
+  display: block;
+
+  margin-bottom: 5px;
+
+  color: #fff;
+
+  font-size: 12px;
+
+  font-weight: 800;
+
+  letter-spacing: .9px;
+}
+
+.footer-column a {
+  color: rgba(255, 255, 255, .55);
+
+  text-decoration: none;
+
+  transition:
+    color .2s ease,
+    transform .2s ease;
+}
+
+.footer-column a:hover {
+  color: var(--azul-claro);
+
+  transform: translateX(2px);
+}
+
+
+/* =========================================================
+   REDES SOCIAIS
+========================================================= */
+
+.footer-social {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: flex-start;
+}
+
+.footer-social p {
+  max-width: 180px;
+
+  margin: 0 0 15px;
+
+  color: rgba(255, 255, 255, .5);
+
+  line-height: 1.45;
+}
+
+.social-links {
+  display: flex;
+
+  gap: 10px;
+
+  margin: 0;
+}
+
+.social-links a {
+  width: 36px;
+
+  height: 36px;
+
+  display: grid;
+
+  place-items: center;
+
+  color: #fff;
+
+  border: 1px solid rgba(255, 255, 255, .25);
+
+  background: transparent;
+
+  text-decoration: none;
+
+  transition:
+    color .2s ease,
+    border-color .2s ease,
+    background .2s ease,
+    transform .2s ease;
+}
+
+.social-links a:hover {
+  color: var(--azul-claro);
+
+  border-color: var(--azul-claro);
+
+  background: rgba(93, 169, 233, .08);
+
+  transform: translateY(-2px);
+}
+
+.social-links ion-icon {
+  font-size: 18px;
+}
+
+
+/* =========================================================
+   PARTE INFERIOR DO FOOTER
+========================================================= */
+
+.footer-bottom {
+  grid-column: 1 / -1;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 20px;
+
+  padding-top: 22px;
+
+  border-top: 1px solid rgba(255, 255, 255, .1);
+
+  color: rgba(255, 255, 255, .32);
+
+  font-size: 11px;
+
+  letter-spacing: .2px;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+  .catalog-hero {
+    min-height: 480px;
+  }
+
+  .catalog-content {
+    grid-template-columns: 220px 1fr;
+
+    gap: 30px;
+  }
+
+  .catalog-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+
+  /* Footer */
+
+  .site-footer {
+    grid-template-columns:
+      1.5fr
+      1fr
+      1fr;
+
+    column-gap: 35px;
+
+    row-gap: 40px;
+  }
+
+  .footer-social {
+    grid-column: 1 / -1;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
 @media (max-width: 800px) {
+
+  .catalog-hero {
+    min-height: 500px;
+  }
 
   .catalog-hero > div,
   .catalog-content {
@@ -275,22 +697,92 @@ h2 span {
 
   .catalog-content {
     grid-template-columns: 1fr;
+
     gap: 32px;
+
     padding-top: 46px;
   }
 
   .catalog-filter nav {
     display: grid;
+
     grid-template-columns: repeat(2, 1fr);
   }
 
   .catalog-grid {
     grid-template-columns: repeat(2, 1fr);
   }
+
+
+  /* Footer */
+
+  .site-footer {
+    grid-template-columns: 1fr 1fr;
+
+    width: 100%;
+
+    padding:
+      42px
+      20px
+      24px;
+
+    gap: 34px 28px;
+  }
+
+  .footer-brand {
+    grid-column: 1 / -1;
+  }
+
+  .footer-social {
+    grid-column: 1 / -1;
+  }
+
+  .footer-bottom {
+    grid-column: 1 / -1;
+
+    align-items: flex-start;
+
+    flex-direction: column;
+
+    gap: 7px;
+  }
+
 }
 
 
+/* =========================================================
+   MOBILE PEQUENO
+========================================================= */
+
 @media (max-width: 480px) {
+
+  .catalog-hero {
+    min-height: 500px;
+  }
+
+  .catalog-hero > div {
+    width: calc(100% - 40px);
+  }
+
+  .catalog-hero h1 {
+    font-size: 43px;
+  }
+
+  .catalog-hero p:not(.eyebrow) {
+    font-size: 16px;
+  }
+
+  .catalog-content {
+    width: calc(100% - 40px);
+
+    padding:
+      50px 0
+      60px;
+  }
+
+  .catalog-list-heading h2 {
+    font-size: 34px;
+  }
 
   .catalog-grid {
     grid-template-columns: 1fr;
@@ -299,86 +791,28 @@ h2 span {
   .catalog-filter nav {
     grid-template-columns: 1fr;
   }
-}
-
-//FOOTER
-
-.site-footer {
-  display: grid;
-  grid-template-columns: 1.5fr 1fr 1fr auto;
-  gap: 28px;
-
-  width: 100%;
-
-  padding: 42px max(32px, calc((100% - 1180px) / 2)) 46px;
-
-  color: rgba(255, 255, 255, .65);
-  font-size: 14px;
-
-  background: #070809;
-}
-
-.site-footer img {
-  width: 150px;
-  height: auto;
-}
-
-.site-footer p {
-  margin: 0;
-}
-
-.footer-brand p {
-  max-width: 230px;
-  margin-top: 12px;
-  line-height: 1.4;
-}
-
-.footer-column {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  font-style: normal;
-}
-
-.footer-column strong {
-  color: #fff;
-  font-size: 13px;
-  letter-spacing: .8px;
-}
-
-.footer-column a {
-  color: rgba(255, 255, 255, .65);
-  text-decoration: none;
-}
-
-.social-links {
-  display: flex;
-  margin-left: auto;
-  gap: 10px;
-}
-
-.social-links a {
-  width: 32px;
-  height: 32px;
-
-  display: grid;
-  place-items: center;
-
-  color: #fff;
-
-  border: 1px solid rgba(255, 255, 255, .35);
-}
 
 
-@media (max-width: 800px) {
+  /* Footer */
 
   .site-footer {
     grid-template-columns: 1fr;
-    gap: 24px;
-    padding-inline: 20px;
+
+    gap: 28px;
+
+    padding:
+      38px
+      20px
+      22px;
   }
 
-  .social-links {
-    margin-left: 0;
+  .footer-brand,
+  .footer-social {
+    grid-column: auto;
   }
+
+  .footer-bottom {
+    grid-column: auto;
+  }
+
 }
