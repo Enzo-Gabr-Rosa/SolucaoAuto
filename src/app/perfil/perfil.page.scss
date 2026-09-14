@@ -1,0 +1,395 @@
+.perfil-page {
+  min-height: calc(90vh - 60px);
+  padding: 28px 0 0;
+}
+
+
+/* =========================================================
+   CARD DO USUÁRIO
+   ========================================================= */
+
+.user-card {
+  width: min(1076px, calc(100% - 64px));
+  min-height: 110px;
+
+  margin: 0 auto;
+  padding: 20px 26px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+
+  background: #050505;
+  border-radius: 12px;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.user-avatar {
+  width: 70px;
+  height: 70px;
+
+  display: grid;
+  place-items: center;
+
+  flex-shrink: 0;
+
+  background: #0b0b0b;
+  border-radius: 50%;
+}
+
+.user-avatar ion-icon {
+  color: #f1f1f1;
+  font-size: 52px;
+}
+
+.user-text h1 {
+  margin: 0 0 3px;
+
+  color: #fff;
+  font-family: 'Oswald';
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.user-text p {
+  margin: 0;
+
+  display: flex;
+  align-items: center;
+  gap: 5px;
+
+  color: rgba(255, 255, 255, .82);
+  font-family: 'Oswald';
+  font-size: 12px;
+}
+
+.user-text p ion-icon {
+  font-size: 16px;
+}
+
+.edit-button {
+  background: var(--azul);
+  border-radius: 0 12px;
+  font-weight: 800;
+  height: 40px;
+  padding: 0 17px;
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  border: none;
+
+  --color: var(--branco);
+
+  font-family: 'Oswald';
+  font-size: 16px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    background .2s ease,
+    transform .2s ease;
+}
+
+.edit-button:hover {
+  background: var(--azul-claro);
+  transform: translateY(-2px);
+}
+
+.edit-button ion-icon {
+  font-size: 22px;
+}
+
+
+/* =========================================================
+   ATALHOS
+   ========================================================= */
+
+.shortcuts-section {
+  width: min(1076px, calc(100% - 64px));
+  margin: 52px auto 0;
+}
+
+.section-title {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 25px;
+}
+
+.section-title h2 {
+  margin: 0;
+
+  color: #fff;
+  font-family: 'Oswald';
+
+  /* antes: 38px */
+  font-size: 32px;
+
+  line-height: 1;
+  font-weight: 800;
+}
+
+
+/* Ícone dos quatro quadrados */
+
+.title-icon {
+  width: 34px;
+  height: 34px;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 4px;
+}
+
+.title-icon span {
+  display: block;
+
+  background: #168ed4;
+  border-radius: 4px;
+}
+
+
+/* =========================================================
+   GRID DOS ATALHOS
+   ========================================================= */
+
+.shortcuts-grid {
+  display: grid;
+
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  column-gap: 58px;
+  row-gap: 25px;
+}
+
+.shortcut-card {
+  /* antes: 97px */
+  height: 78px;
+
+  padding: 0 18px;
+
+  display: flex;
+  align-items: center;
+  gap: 16px;
+
+  border: none;
+  border-radius: 9px;
+
+  background: #050505;
+  color: #fff;
+
+  text-align: left;
+
+  cursor: pointer;
+
+  transition:
+    transform .2s ease,
+    background .2s ease;
+}
+
+.shortcut-card:hover {
+  transform: translateY(-2px);
+  background: #090909;
+}
+
+.shortcut-card ion-icon {
+  flex-shrink: 0;
+
+  color: #168ed4;
+
+  /* antes: 48px */
+  font-size: 40px;
+}
+
+.shortcut-card span {
+  color: #fff;
+
+  font-family: 'Oswald';
+
+  /* antes: 38px */
+  font-size: 30px;
+
+  line-height: 1;
+  font-weight: 800;
+}
+
+
+/* =========================================================
+   RESPONSIVIDADE
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+  .user-card,
+  .shortcuts-section {
+    width: min(100% - 40px, 650px);
+  }
+
+  .shortcuts-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+}
+
+
+@media (max-width: 600px) {
+
+  .perfil-page {
+    padding-top: 20px;
+  }
+
+  .user-card {
+    width: calc(100% - 28px);
+
+    padding: 18px;
+
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .user-info {
+    gap: 15px;
+  }
+
+  .user-avatar {
+    width: 60px;
+    height: 60px;
+  }
+
+  .user-avatar ion-icon {
+    font-size: 45px;
+  }
+
+  .user-text h1 {
+    font-size: 18px;
+  }
+
+  .edit-button {
+    width: 100%;
+    justify-content: center;
+    border-radius: 0 0 0 14px;
+  }
+
+  .shortcuts-section {
+    width: calc(100% - 28px);
+    margin-top: 38px;
+  }
+
+  .section-title {
+    margin-bottom: 20px;
+  }
+
+  .section-title h2 {
+    font-size: 28px;
+  }
+
+  .title-icon {
+    width: 29px;
+    height: 29px;
+  }
+
+  .shortcut-card {
+    height: 70px;
+    gap: 13px;
+  }
+
+  .shortcut-card ion-icon {
+    font-size: 34px;
+  }
+
+  .shortcut-card span {
+    font-size: 26px;
+  }
+}
+
+//FOOTER
+
+.site-footer {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr auto;
+  gap: 28px;
+
+  width: 100%;
+
+  padding: 42px max(32px, calc((100% - 1180px) / 2)) 46px;
+
+  color: rgba(255, 255, 255, .65);
+  font-size: 14px;
+
+  background: #070809;
+}
+
+.site-footer img {
+  width: 150px;
+  height: auto;
+}
+
+.site-footer p {
+  margin: 0;
+}
+
+.footer-brand p {
+  max-width: 230px;
+  margin-top: 12px;
+  line-height: 1.4;
+}
+
+.footer-column {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-style: normal;
+}
+
+.footer-column strong {
+  color: #fff;
+  font-size: 13px;
+  letter-spacing: .8px;
+}
+
+.footer-column a {
+  color: rgba(255, 255, 255, .65);
+  text-decoration: none;
+}
+
+.social-links {
+  display: flex;
+  margin-left: auto;
+  gap: 10px;
+}
+
+.social-links a {
+  width: 32px;
+  height: 32px;
+
+  display: grid;
+  place-items: center;
+
+  color: #fff;
+
+  border: 1px solid rgba(255, 255, 255, .35);
+}
+
+
+@media (max-width: 800px) {
+
+  .site-footer {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding-inline: 20px;
+  }
+
+  .social-links {
+    margin-left: 0;
+  }
+}

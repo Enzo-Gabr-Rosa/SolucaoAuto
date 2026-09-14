@@ -1,0 +1,101 @@
+<ion-content [fullscreen]="true">
+
+  <main class="perfil-page">
+
+    <!-- ==================== USUÁRIO ==================== -->
+    <section class="user-card">
+
+      <div class="user-info">
+
+        <div class="user-avatar">
+          <ion-icon name="person"></ion-icon>
+        </div>
+
+        <div class="user-text">
+          <h1>Bem-vindo(a), Usuário</h1>
+
+          <p>
+            <ion-icon name="mail-outline"></ion-icon>
+            usuario@mail.com
+          </p>
+        </div>
+
+      </div>
+
+      <button class="edit-button">
+        <ion-icon name="create-outline"></ion-icon>
+        <span>Editar dados</span>
+      </button>
+
+    </section>
+
+
+    <!-- ==================== ATALHOS ==================== -->
+    <section class="shortcuts-section">
+
+      <div class="section-title">
+        <div class="title-icon">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
+        <h2>ATALHOS</h2>
+      </div>
+
+
+      <div class="shortcuts-grid">
+
+        <button class="shortcut-card">
+          <ion-icon name="create-outline"></ion-icon>
+          <span>MEUS DADOS</span>
+        </button>
+
+        <button class="shortcut-card">
+          <ion-icon name="heart"></ion-icon>
+          <span>FAVORITOS</span>
+        </button>
+
+        <button class="shortcut-card">
+          <ion-icon name="cart-outline"></ion-icon>
+          <span>CARRINHO</span>
+        </button>
+
+        <button class="shortcut-card">
+          <ion-icon name="notifications"></ion-icon>
+          <span>NOTIFICAÇÕES</span>
+        </button>
+
+        <button class="shortcut-card">
+          <ion-icon name="time-outline"></ion-icon>
+          <span>RECENTES</span>
+        </button>
+
+        <button class="shortcut-card">
+          <ion-icon name="settings"></ion-icon>
+          <span>CONFIGURAÇÕES</span>
+        </button>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="site-footer">
+      <div class="footer-brand"><img src="assets/img/SolucaoAuto semBG navbar.png" alt="Solução Auto">
+        <p>Produtos profissionais para estética automotiva.</p>
+      </div>
+      <nav class="footer-column" aria-label="Navegação do rodapé"><strong>NAVEGAÇÃO</strong><a
+          routerLink="/home">Início</a><a routerLink="/catalogo">Catálogo</a><a routerLink="/perfil">Meu perfil</a>
+      </nav>
+      <address class="footer-column"><strong>CONTATO</strong><a href="tel:+5500000000000">(00) 00000-0000</a><a
+          href="mailto:contato@solucaoauto.com">contato@solucaoauto.com</a><a href="#">&#64;solucaoauto</a></address>
+      <div class="social-links" aria-label="Redes sociais"><a href="#" aria-label="WhatsApp"><ion-icon
+            name="logo-whatsapp"></ion-icon></a><a href="#" aria-label="Instagram"><ion-icon
+            name="logo-instagram"></ion-icon></a></div>
+    </footer>
+</ion-content>

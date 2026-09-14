@@ -1,0 +1,54 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@import "@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "@ionic/angular/css/normalize.css";
+@import "@ionic/angular/css/structure.css";
+@import "@ionic/angular/css/typography.css";
+@import "@ionic/angular/css/display.css";
+
+/* Optional CSS utils */
+@import "@ionic/angular/css/padding.css";
+@import "@ionic/angular/css/float-elements.css";
+@import "@ionic/angular/css/text-alignment.css";
+@import "@ionic/angular/css/text-transformation.css";
+@import "@ionic/angular/css/flex-utils.css";
+
+/* Ionic Dark Mode */
+@import '@ionic/angular/css/palettes/dark.system.css';
+
+
+ion-content {
+  --background: linear-gradient(
+    222deg,
+    rgba(0, 15, 86, 0.20) 0%,
+    #0C0C0C 55.77%
+  );
+}
+
+
+/* Fontes */
+@font-face {
+  font-family: 'Oswald';
+  src: url('../src/assets/fonts/Oswald/static/Oswald-Regular.ttf');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Oswald';
+  src: url('../src/assets/fonts/Oswald/static/Oswald-Bold.ttf');
+  font-weight: 800;
+  font-style: normal;
+}
+
+
+/* Fonte global */
+* {
+  font-family: 'Oswald';
+}

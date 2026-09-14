@@ -1,0 +1,221 @@
+<ion-content [fullscreen]="true">
+  <main class="catalog-page">
+
+    <!-- HERO -->
+    <section
+      class="catalog-hero"
+      aria-labelledby="catalog-title"
+    >
+      <div>
+        <p class="eyebrow">
+          <ion-icon name="flag"></ion-icon>
+          SOLUÇÃO AUTO
+        </p>
+
+        <h1 id="catalog-title">
+          NOSSO <span>CATÁLOGO.</span>
+        </h1>
+
+        <p>
+          Encontre os produtos certos para manter seu carro sempre impecável.
+        </p>
+      </div>
+    </section>
+
+
+    <!-- CONTEÚDO DO CATÁLOGO -->
+    <section
+      class="catalog-content"
+      aria-label="Lista de produtos"
+    >
+
+      <!-- FILTROS -->
+      <aside
+        class="catalog-filter"
+        aria-label="Pesquisa e filtros"
+      >
+
+        <div class="filter-heading">
+          <ion-icon name="filter-outline"></ion-icon>
+          <strong>ENCONTRE SEU PRODUTO</strong>
+        </div>
+
+        <ion-searchbar
+          placeholder="Buscar produto"
+          searchIcon="search-outline"
+          inputmode="search"
+        ></ion-searchbar>
+
+        <div class="filter-fields">
+
+          <p>FILTROS</p>
+
+          <!-- MARCA -->
+          <ion-item lines="none">
+            <ion-label position="stacked">
+              MARCA
+            </ion-label>
+
+            <ion-select placeholder="Todas as marcas">
+              <ion-select-option value="solucao-auto">
+                Solução Auto
+              </ion-select-option>
+
+              <ion-select-option value="outros">
+                Outras marcas
+              </ion-select-option>
+            </ion-select>
+          </ion-item>
+
+
+          <!-- CATEGORIA -->
+          <ion-item lines="none">
+            <ion-label position="stacked">
+              CATEGORIA
+            </ion-label>
+
+            <ion-select placeholder="Todas as categorias">
+              <ion-select-option value="ceras">
+                Ceras e proteção
+              </ion-select-option>
+
+              <ion-select-option value="lavagem">
+                Lavagem
+              </ion-select-option>
+
+              <ion-select-option value="acessorios">
+                Acessórios
+              </ion-select-option>
+            </ion-select>
+          </ion-item>
+
+
+          <!-- PREÇO -->
+          <ion-item lines="none">
+            <ion-label position="stacked">
+              PREÇO
+            </ion-label>
+
+            <ion-select placeholder="Qualquer preço">
+              <ion-select-option value="0-50">
+                Até R$ 50
+              </ion-select-option>
+
+              <ion-select-option value="50-100">
+                R$ 50 a R$ 100
+              </ion-select-option>
+
+              <ion-select-option value="100">
+                Acima de R$ 100
+              </ion-select-option>
+            </ion-select>
+          </ion-item>
+
+
+          <!-- DISPONIBILIDADE -->
+          <ion-checkbox labelPlacement="end">
+            Somente disponíveis
+          </ion-checkbox>
+
+        </div>
+      </aside>
+
+
+      <!-- LISTA DE PRODUTOS -->
+      <div class="catalog-list">
+
+        <div class="catalog-list-heading">
+
+          <div>
+            <p class="eyebrow">
+              TODOS OS ITENS
+            </p>
+
+            <h2>
+              PRODUTOS <span>DISPONÍVEIS</span>
+            </h2>
+          </div>
+
+          <ion-icon name="grid-outline"></ion-icon>
+
+        </div>
+
+
+        <!-- GRID -->
+        <div class="catalog-grid">
+
+          @for (product of products; track product.name) {
+
+            <article class="catalog-card">
+
+              <!-- IMAGEM -->
+              <div class="catalog-image-placeholder">
+                <ion-icon name="image-outline"></ion-icon>
+
+                <span>
+                  IMAGEM DO PRODUTO
+                </span>
+              </div>
+
+
+              <!-- INFORMAÇÕES -->
+              <div class="catalog-card-copy">
+
+                <p>
+                  {{ product.category }}
+                </p>
+
+                <h3>
+                  {{ product.name }}
+                </h3>
+
+                <span class="product-description">
+                  Descrição do produto e seus principais benefícios.
+                </span>
+
+
+                <!-- AÇÃO -->
+                <div class="catalog-card-action">
+
+                  <strong>
+                    {{ product.price }}
+                  </strong>
+
+                  <ion-button
+                    class="catalog-add-button"
+                    fill="solid"
+                    [attr.aria-label]="'Adicionar ' + product.name"
+                  >
+                    <ion-icon name="add-outline"></ion-icon>
+                  </ion-button>
+
+                </div>
+
+              </div>
+
+            </article>
+
+          }
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+    <footer class="site-footer">
+      <div class="footer-brand"><img src="assets/img/SolucaoAuto semBG navbar.png" alt="Solução Auto">
+        <p>Produtos profissionais para estética automotiva.</p>
+      </div>
+      <nav class="footer-column" aria-label="Navegação do rodapé"><strong>NAVEGAÇÃO</strong><a
+          routerLink="/home">Início</a><a routerLink="/catalogo">Catálogo</a><a routerLink="/perfil">Meu perfil</a>
+      </nav>
+      <address class="footer-column"><strong>CONTATO</strong><a href="tel:+5500000000000">(00) 00000-0000</a><a
+          href="mailto:contato@solucaoauto.com">contato@solucaoauto.com</a><a href="#">&#64;solucaoauto</a></address>
+      <div class="social-links" aria-label="Redes sociais"><a href="#" aria-label="WhatsApp"><ion-icon
+            name="logo-whatsapp"></ion-icon></a><a href="#" aria-label="Instagram"><ion-icon
+            name="logo-instagram"></ion-icon></a></div>
+    </footer>
+</ion-content>
